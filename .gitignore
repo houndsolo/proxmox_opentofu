@@ -1,0 +1,5 @@
+id_rsa.pub
+debug.log
+passwords.tf
+terraform.tfstate*
+.terraform*
