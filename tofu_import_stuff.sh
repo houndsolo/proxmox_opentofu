@@ -5,49 +5,49 @@ set -euo pipefail
 
 nodes=(
   fichina
-#  fortuna
-#  macbeth
-#  titania
-#  zoness
-#  venom
-#  eldarad
+  fortuna
+  macbeth
+  titania
+  zoness
+  venom
+  eldarad
 )
 
-#bridges=(
-#  1
-#  0
-#  100
-#  7
-#  4000
-#  4001
-#  4002
-#  4010
-#  4011
-#  4012
-#  22
-#  27
-#)
-#
-#eths=(
-#  0
-#  1
-#  10
-#  7
-#  4001
-#  4002
-#  22
-#  27
-#)
-#
-## "vlan_id parent_interface"
-#bonds=(
-#  "0"
-#)
+bridges=(
+  1
+  0
+  100
+  7
+  4000
+  4001
+  4002
+  4010
+  4011
+  4012
+  22
+  27
+)
+
+eths=(
+  0
+  1
+  10
+  7
+  4001
+  4002
+  22
+  27
+)
+
+# "vlan_id parent_interface"
+bonds=(
+  "0"
+)
 vlans=(
   "2 vmbr4000"
-#  "5 vmbr4000"
-#  "22 bond0"
-#  "27 bond0"
+#  "5 vmbr100"
+  "22 bond0"
+  "27 bond0"
 )
 
 for node in "${nodes[@]}"; do
