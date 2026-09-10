@@ -90,12 +90,12 @@ vms = {
     ]
 
     cpu = {
-      cores = 4
+      cores = 6
       type  = "x86-64-v2-AES"
     }
 
     memory = {
-      dedicated = 4096
+      dedicated = 10240
     }
 
     operating_system_type = "l26"
@@ -196,12 +196,12 @@ vms = {
     ]
 
     cpu = {
-      cores = 4
+      cores = 6
       type  = "x86-64-v2-AES"
     }
 
     memory = {
-      dedicated = 4096
+      dedicated = 10240
     }
 
     operating_system_type = "l26"
