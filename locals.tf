@@ -69,6 +69,7 @@ locals {
         tags            = group.tags
         template        = group.template
         started         = group.started
+        machine         = group.machine
         keyboard_layout = "en-us"
         migrate         = false
         on_boot         = group.on_boot
