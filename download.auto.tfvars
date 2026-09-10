@@ -26,6 +26,16 @@ download_files = {
   #  overwrite_unmanaged = true
   #  overwrite           = false
   #}
+  #
+  ubuntu_2604 = {
+    content_type        = "import"
+    datastore_id        = "cephfs"
+    node_name           = "fichina"
+    url                 = "https://cloud-images.ubuntu.com/releases/26.04/release/ubuntu-26.04-server-cloudimg-amd64.img"
+    file_name           = "ubuntu-26.04-server-cloudimg-amd64.img"
+    overwrite_unmanaged = true
+    overwrite           = false
+  }
   debian_12 = {
     content_type        = "import"
     datastore_id        = "cephfs"
