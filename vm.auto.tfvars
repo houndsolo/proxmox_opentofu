@@ -11,6 +11,7 @@ vms = {
     vm_id     = 1211
 
     image_key = "ubuntu_2604"
+    machine = "q35"
 
     cloud_init = {
       enabled      = true
