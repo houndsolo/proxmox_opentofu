@@ -7,6 +7,7 @@ resource "proxmox_virtual_environment_vm" "this" {
   tags            = each.value.tags
   template        = each.value.template
   started         = each.value.started
+  machine         = each.value.machine
   keyboard_layout = each.value.keyboard_layout
   migrate         = each.value.migrate
   on_boot         = each.value.on_boot
