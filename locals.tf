@@ -70,6 +70,7 @@ locals {
         template        = group.template
         started         = group.started
         machine         = group.machine
+        bios            = group.bios
         keyboard_layout = "en-us"
         migrate         = false
         on_boot         = group.on_boot
