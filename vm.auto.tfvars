@@ -64,6 +64,11 @@ vms = {
             address = "10.12.0.11/16"
             gateway = "10.12.0.5"
           }
+        },
+        {
+          ipv4 = {
+            address = "10.27.12.11/16"
+          }
         }
       ]
 
@@ -80,6 +85,10 @@ vms = {
       {
         bridge  = "vmbr4000"
         vlan_id = 12
+        model   = "virtio"
+      },
+      {
+        bridge  = "vmbr27"
         model   = "virtio"
       }
     ]
@@ -171,6 +180,11 @@ vms = {
             address = "10.12.0.12/16"
             gateway = "10.12.0.5"
           }
+        },
+        {
+          ipv4 = {
+            address = "10.27.12.12/16"
+          }
         }
       ]
 
@@ -187,6 +201,10 @@ vms = {
       {
         bridge  = "vmbr4000"
         vlan_id = 12
+        model   = "virtio"
+      },
+      {
+        bridge  = "vmbr27"
         model   = "virtio"
       }
     ]
