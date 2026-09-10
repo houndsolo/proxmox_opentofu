@@ -104,6 +104,111 @@ vms = {
       type   = "serial0"
     }
   }
+  ubuntu2 = {
+    name        = "ubuntu2"
+    description = "Ubuntu 26.04 LTS server"
+    tags        = ["opentofu", "ubuntu"]
+    started     = true
+    template    = false
+    on_boot     = true
+
+    node_name = "eldarad"
+    vm_id     = 1212
+
+    image_key = "ubuntu_2604"
+    machine = "q35"
+
+    cloud_init = {
+      enabled      = true
+      datastore_id = "cephfs"
+      node_name    = "fichina"
+      file_name    = "ubuntu1.yaml"
+
+      hostname = "ubuntu-6800"
+      username = "mechanic"
+
+      packages = [
+        "qemu-guest-agent",
+        "net-tools",
+        "curl",
+        "git",
+      ]
+
+      runcmd = [
+        "systemctl enable --now qemu-guest-agent",
+        "echo 'cloud-init complete' > /tmp/cloud-config.done",
+      ]
+    }
+
+    disk = {
+      datastore_id = "ceph_rbd"
+      interface    = "virtio0"
+      iothread     = true
+      size         = 32
+    }
+
+    initialization = {
+      interface    = "scsi0"
+      datastore_id = "ceph_rbd"
+      upgrade      = true
+
+      dns = {
+        domain  = "lylat.space"
+        servers = ["1.1.1.1"]
+      }
+
+      ip_configs = [
+        {
+          ipv4 = {
+            address = "10.20.12.2/16"
+          }
+        },
+        {
+          ipv4 = {
+            address = "dhcp"
+          }
+        }
+      ]
+
+      user_account = {
+        username = "mechanic"
+      }
+    }
+
+    network_devices = [
+      {
+        bridge = "vmbr0"
+        model  = "virtio"
+      },
+      {
+        bridge  = "vmbr4000"
+        vlan_id = 12
+        model   = "virtio"
+      }
+    ]
+
+    serial_devices = [
+      {
+        device = "socket"
+      }
+    ]
+
+    cpu = {
+      cores = 4
+      type  = "x86-64-v2-AES"
+    }
+
+    memory = {
+      dedicated = 4096
+    }
+
+    operating_system_type = "l26"
+
+    vga = {
+      memory = 16
+      type   = "serial0"
+    }
+  }
   dns1 = {
     name        = "dns1"
     description = "managed by opentofu"
