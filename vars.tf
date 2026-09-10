@@ -102,6 +102,7 @@ variable "vms" {
     template        = optional(bool, false)
     started         = optional(bool, true)
     machine         = optional(string)
+    bios            = optional(string)
     keyboard_layout = optional(string, "en-us")
     migrate         = optional(bool, false)
     on_boot         = optional(bool, false)
@@ -213,6 +214,11 @@ variable "vms" {
   }
 
   validation {
+    condition     = alltrue([for vm in values(var.vms) : vm.bios == null ? true : contains(["seabios", "ovmf"], vm.bios)])
+    error_message = "BIOS must be seabios or ovmf (UEFI) when specified."
+  }
+
+  validation {
     condition     = alltrue([for vm in values(var.vms) : vm.vm_id > 0])
     error_message = "All explicit VM IDs must be positive."
   }
@@ -233,6 +239,7 @@ variable "vm_groups" {
   type = map(object({
     enabled     = optional(bool, true)
     machine     = optional(string)
+    bios        = optional(string)
     name_prefix = string
     vm_id_base  = number
     image_key   = string
@@ -316,6 +323,11 @@ variable "vm_groups" {
   validation {
     condition     = alltrue([for group in values(var.vm_groups) : group.machine == null ? true : contains(["pc", "q35"], group.machine)])
     error_message = "Machine must be pc or q35 when specified."
+  }
+
+  validation {
+    condition     = alltrue([for group in values(var.vm_groups) : group.bios == null ? true : contains(["seabios", "ovmf"], group.bios)])
+    error_message = "BIOS must be seabios or ovmf (UEFI) when specified."
   }
 
   validation {
