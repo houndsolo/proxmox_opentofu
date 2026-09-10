@@ -45,7 +45,7 @@ vms = {
     initialization = {
       interface    = "scsi0"
       datastore_id = "ceph_rbd"
-      upgrade      = true
+      upgrade      = false
 
       dns = {
         domain  = "lylat.space"
@@ -122,7 +122,7 @@ vms = {
       enabled      = true
       datastore_id = "cephfs"
       node_name    = "fichina"
-      file_name    = "ubuntu1.yaml"
+      file_name    = "ubuntu2.yaml"
 
       hostname = "ubuntu-6800"
       username = "mechanic"
@@ -150,7 +150,7 @@ vms = {
     initialization = {
       interface    = "scsi0"
       datastore_id = "ceph_rbd"
-      upgrade      = true
+      upgrade      = false
 
       dns = {
         domain  = "lylat.space"
