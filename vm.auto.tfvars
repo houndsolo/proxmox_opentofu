@@ -61,7 +61,8 @@ vms = {
         },
         {
           ipv4 = {
-            address = "dhcp"
+            address = "10.12.0.11/16"
+            gateway = "10.12.0.5"
           }
         }
       ]
@@ -167,7 +168,8 @@ vms = {
         },
         {
           ipv4 = {
-            address = "dhcp"
+            address = "10.12.0.12/16"
+            gateway = "10.12.0.5"
           }
         }
       ]
