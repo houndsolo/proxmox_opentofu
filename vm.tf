@@ -25,10 +25,15 @@ resource "proxmox_virtual_environment_vm" "this" {
   disk {
     datastore_id = each.value.disk.datastore_id
     interface    = each.value.disk.interface
-    file_id      = each.value.image_key == null ? null : local.image_file_ids[each.value.image_key]
-    import_from  = try(each.value.disk.import_from, null)
-    iothread     = each.value.disk.iothread
-    size         = each.value.disk.size
+
+    import_from = (
+      each.value.image_key != null
+      ? local.image_file_ids[each.value.image_key]
+      : try(each.value.disk.import_from, null)
+    )
+
+    iothread = each.value.disk.iothread
+    size     = each.value.disk.size
   }
 
   dynamic "initialization" {

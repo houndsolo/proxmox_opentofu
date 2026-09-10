@@ -32,7 +32,7 @@ download_files = {
     datastore_id        = "cephfs"
     node_name           = "fichina"
     url                 = "https://cloud-images.ubuntu.com/releases/26.04/release/ubuntu-26.04-server-cloudimg-amd64.img"
-    file_name           = "ubuntu-26.04-server-cloudimg-amd64.img"
+    file_name           = "ubuntu-26.04-server-cloudimg-amd64.qcow2"
     overwrite_unmanaged = true
     overwrite           = false
   }

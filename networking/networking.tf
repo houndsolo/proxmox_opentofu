@@ -1,14 +1,14 @@
 resource "proxmox_network_linux_bond" "this" {
   depends_on = [proxmox_network_linux_eth.this]
-  for_each  = var.pve_network.bonds
-  node_name = var.pve_host
+  for_each   = var.pve_network.bonds
+  node_name  = var.pve_host
   #autostart = false
-  name    = "bond${each.key}"
-  mtu     = each.value.mtu
-  bond_mode = each.value.bond_mode
+  name                  = "bond${each.key}"
+  mtu                   = each.value.mtu
+  bond_mode             = each.value.bond_mode
   bond_xmit_hash_policy = each.value.bond_xmit_hash_policy
-  slaves = each.value.slaves
-  comment = each.value.description
+  slaves                = each.value.slaves
+  comment               = each.value.description
 }
 
 resource "proxmox_network_linux_eth" "this" {
@@ -29,7 +29,7 @@ resource "proxmox_network_linux_bridge" "this" {
   mtu        = each.value.mtu
   comment    = each.value.description
   vlan_aware = each.value.vlan_aware
-  gateway = each.value.gateway
+  gateway    = each.value.gateway
   address = try(
     "${cidrhost(each.value.ipv4.cidrhost_prefix, var.pve_host_id)}/${each.value.ipv4.cidr}",
     null

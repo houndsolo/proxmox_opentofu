@@ -222,13 +222,13 @@ vnis = [
   },
 
   {
-    vlan_id         = 67
-    vni             = 6700
-    roles           = ["external_l2"]
-    vrf             = "lylat_ai"
-    vrf_table       = 6700
-    ipv4_rt_imports = "700:6600 700:6900"
-    ipv4_rt_exports = "700:6700"
+    vlan_id                          = 67
+    vni                              = 6700
+    roles                            = ["external_l2"]
+    vrf                              = "lylat_ai"
+    vrf_table                        = 6700
+    ipv4_rt_imports                  = "700:6600 700:6900"
+    ipv4_rt_exports                  = "700:6700"
     border_leaf_ipv4_vpn_import_bool = true
     export_vpn_ipv4                  = true
     evpn_rt_imports = [

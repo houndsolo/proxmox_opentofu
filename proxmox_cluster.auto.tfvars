@@ -1,11 +1,11 @@
 pve_network = {
   bonds = {
     0 = {
-      mtu         = 9600
-      description = "ceph"
-      bond_mode = "802.3ad"
+      mtu                   = 9600
+      description           = "ceph"
+      bond_mode             = "802.3ad"
       bond_xmit_hash_policy = "layer3+4"
-      slaves        = [
+      slaves = [
         "eth22",
         "eth27"
       ]
@@ -117,8 +117,8 @@ pve_network = {
       mtu         = 9189
       description = "vxlan leaf to spine 1"
       vlan_aware  = true
-      ports       = [
-                "eth4001"
+      ports = [
+        "eth4001"
       ]
     }
 
@@ -126,7 +126,7 @@ pve_network = {
       mtu         = 9189
       description = "vxlan leaf to spine 2"
       vlan_aware  = true
-      ports       = [
+      ports = [
         "eth4002"
       ]
     }

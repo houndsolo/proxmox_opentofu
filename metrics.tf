@@ -9,7 +9,7 @@ resource "proxmox_metrics_server" "influxdb_server" {
   influx_token        = var.influx_api_token
   influx_verify       = false
   mtu                 = 1500
-  disable = true
+  disable             = true
   lifecycle {
     ignore_changes = [
       influx_token

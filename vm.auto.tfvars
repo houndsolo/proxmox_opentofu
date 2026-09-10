@@ -71,8 +71,8 @@ vms = {
 
     network_devices = [
       {
-        bridge  = "vmbr0"
-        model   = "virtio"
+        bridge = "vmbr0"
+        model  = "virtio"
       },
       {
         bridge  = "vmbr4000"
@@ -164,8 +164,8 @@ vms = {
 
     network_devices = [
       {
-        bridge  = "vmbr0"
-        model   = "virtio"
+        bridge = "vmbr0"
+        model  = "virtio"
       },
       {
         bridge  = "vmbr4000"
@@ -190,9 +190,9 @@ vms = {
     started     = true
     template    = false
     on_boot     = true
-    node_name = "fortuna"
-    vm_id     = 5302
-    image_key = "debian_13"
+    node_name   = "fortuna"
+    vm_id       = 5302
+    image_key   = "debian_13"
 
     cloud_init = {
       enabled      = true
@@ -243,8 +243,8 @@ vms = {
 
     network_devices = [
       {
-        bridge  = "vmbr0"
-        model   = "virtio"
+        bridge = "vmbr0"
+        model  = "virtio"
       },
       {
         bridge  = "vmbr4000"
@@ -548,12 +548,12 @@ vm_groups = {
     networks = [
       {
         bridge  = "vmbr4000"
-        vlan_id     = 8
+        vlan_id = 8
         model   = "virtio"
       },
       {
         bridge  = "vmbr4000"
-        vlan_id     = 6
+        vlan_id = 6
         model   = "virtio"
       },
     ]

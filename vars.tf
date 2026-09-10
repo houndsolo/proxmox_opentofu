@@ -404,7 +404,7 @@ variable "lxcs" {
 
     operating_system = optional(object({
       template_file_id = string
-      type = string
+      type             = string
     }))
 
     cpu = optional(object({
