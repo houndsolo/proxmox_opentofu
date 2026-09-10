@@ -12,7 +12,7 @@ vms = {
 
     image_key = "ubuntu_2604"
     machine = "q35"
-    bios  = "omvf"
+    bios  = "ovmf"
 
     cloud_init = {
       enabled      = true
@@ -118,7 +118,7 @@ vms = {
 
     image_key = "ubuntu_2604"
     machine = "q35"
-    bios  = "omvf"
+    bios  = "ovmf"
 
     cloud_init = {
       enabled      = true
