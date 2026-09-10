@@ -77,7 +77,7 @@ vms = {
       },
       {
         bridge  = "vmbr4000"
-        vlan_id = 8
+        vlan_id = 12
         model   = "virtio"
       }
     ]
