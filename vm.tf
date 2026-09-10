@@ -8,6 +8,7 @@ resource "proxmox_virtual_environment_vm" "this" {
   template        = each.value.template
   started         = each.value.started
   machine         = each.value.machine
+  bios            = each.value.bios
   keyboard_layout = each.value.keyboard_layout
   migrate         = each.value.migrate
   on_boot         = each.value.on_boot
