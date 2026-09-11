@@ -65,9 +65,6 @@ variable "pve_network" {
   })
 }
 
-variable "fabric" {
-}
-
 variable "dns" {
   description = "DNS configuration"
   type = object({
@@ -75,9 +72,6 @@ variable "dns" {
     domain_name   = string
     domain_search = list(string)
   })
-}
-
-variable "vnis" {
 }
 
 variable "download_files" {
