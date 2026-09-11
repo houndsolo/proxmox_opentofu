@@ -96,7 +96,7 @@ variable "vms" {
     template        = optional(bool, false)
     started         = optional(bool, true)
     machine         = optional(string, "q35")
-    bios            = optional(string, "omvf")
+    bios            = optional(string, "ovmf")
     keyboard_layout = optional(string, "en-us")
     migrate         = optional(bool, false)
     on_boot         = optional(bool, false)
