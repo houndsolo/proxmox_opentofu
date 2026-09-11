@@ -1,6 +1,6 @@
 resource "proxmox_network_linux_bond" "this" {
   depends_on = [proxmox_network_linux_eth.this]
-  for_each   = var.pve_network.bonds
+  for_each   = var.proxmox_network.bonds
   node_name  = var.pve_host
   #autostart = false
   name                  = "bond${each.key}"
@@ -12,7 +12,7 @@ resource "proxmox_network_linux_bond" "this" {
 }
 
 resource "proxmox_network_linux_eth" "this" {
-  for_each  = var.pve_network.eths
+  for_each  = var.proxmox_network.eths
   node_name = var.pve_host
   #autostart = false
   name    = "eth${each.key}"

@@ -1,4 +1,4 @@
-pve_network = {
+proxmox_network = {
   bonds = {
     0 = {
       mtu                   = 9600
@@ -184,7 +184,7 @@ pve_network = {
 }
 
 
-pve_nodes = {
+proxmox_nodes = {
   fichina = {
     id   = 11
     cpus = 8

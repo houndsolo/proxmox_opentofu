@@ -14,7 +14,7 @@ locals {
     if try(lxc.initialization.user_account, null) != null
   }
 }
-variable "pve_nodes" {
+variable "proxmox_nodes" {
   description = "Known Proxmox node ID metadata keyed by node name. Prefer proxmox_node_ids for VM group ID/suffix lookups."
   type = map(object({
     id   = number
@@ -22,7 +22,7 @@ variable "pve_nodes" {
   }))
 }
 
-variable "pve_network" {
+variable "proxmox_network" {
   description = "Proxmox cluster networking configuration"
 
   type = object({

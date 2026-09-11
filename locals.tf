@@ -5,7 +5,7 @@ locals {
   proxmox_allnodes = {
     for node_name in data.proxmox_virtual_environment_nodes.available_nodes.names :
     node_name => {
-      id = var.pve_nodes[node_name].id
+      id = var.proxmox_nodes[node_name].id
     }
   }
 
