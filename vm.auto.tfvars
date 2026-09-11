@@ -11,8 +11,8 @@ vms = {
     vm_id     = 1211
 
     image_key = "ubuntu_2604"
-    machine = "q35"
-    bios  = "ovmf"
+    machine   = "q35"
+    bios      = "ovmf"
 
     cloud_init = {
       enabled      = true
@@ -88,8 +88,8 @@ vms = {
         model   = "virtio"
       },
       {
-        bridge  = "vmbr27"
-        model   = "virtio"
+        bridge = "vmbr27"
+        model  = "virtio"
       }
     ]
 
@@ -127,8 +127,8 @@ vms = {
     vm_id     = 1212
 
     image_key = "ubuntu_2604"
-    machine = "q35"
-    bios  = "ovmf"
+    machine   = "q35"
+    bios      = "ovmf"
 
     cloud_init = {
       enabled      = true
@@ -204,8 +204,8 @@ vms = {
         model   = "virtio"
       },
       {
-        bridge  = "vmbr27"
-        model   = "virtio"
+        bridge = "vmbr27"
+        model  = "virtio"
       }
     ]
 
@@ -625,93 +625,4 @@ vms = {
       type   = "std"
     }
   }
-}
-
-vm_groups = {
-  #test_hosts = {
-  #  enabled     = true
-  #  name_prefix = "test-host"
-  #  vm_id_base  = 1700
-  #  image_key   = "debian_13"
-  #  tags        = ["opentofu", "debian", "test-host"]
-  #  started     = true
-  #  template    = false
-  #  on_boot     = true
-
-  #  cloud_init = {
-  #    mode              = "per_node"
-  #    datastore_id      = "cephfs"
-  #    node_name         = "fichina"
-  #    file_name_pattern = "test-host-CI-{node_name}.yaml"
-  #    hostname_pattern  = "test-host-{node_name}"
-  #    username          = "mechanic"
-  #    packages          = ["qemu-guest-agent", "net-tools", "curl"]
-  #    runcmd = [
-  #      "systemctl enable qemu-guest-agent",
-  #      "systemctl start qemu-guest-agent",
-  #      "echo \"done\" > /tmp/cloud-config.done",
-  #    ]
-  #  }
-
-  #  disk = {
-  #    datastore_id = "ceph_rbd"
-  #    interface    = "virtio0"
-  #    size         = 20
-  #    iothread     = true
-  #  }
-
-  #  initialization = {
-  #    datastore_id = "ceph_rbd"
-  #    interface    = "scsi0"
-  #    upgrade      = false
-  #    dns = {
-  #      domain  = "lylat.space"
-  #      servers = ["10.8.6.9"]
-  #    }
-  #    user_account = {
-  #      username = "mechanic"
-  #    }
-  #  }
-
-  #  networks = [
-  #    {
-  #      bridge  = "vmbr4000"
-  #      vlan_id = 8
-  #      model   = "virtio"
-  #    },
-  #    {
-  #      bridge  = "vmbr4000"
-  #      vlan_id = 6
-  #      model   = "virtio"
-  #    },
-  #  ]
-
-  #  ip_configs = [
-  #    {
-  #      ipv4_address_template = "10.8.200.{node_id}/16"
-  #      gateway               = "10.8.0.5"
-  #    },
-  #    {
-  #      ipv4_address_template = "10.6.200.{node_id}/16"
-  #    },
-  #  ]
-
-  #  cpu = {
-  #    cores   = 4
-  #    type    = "x86-64-v2-AES"
-  #    sockets = 1
-  #    units   = 1024
-  #  }
-
-  #  memory = {
-  #    dedicated = 4096
-  #  }
-
-  #  operating_system_type = "l26"
-
-  #  vga = {
-  #    memory = 16
-  #    type   = "serial0"
-  #  }
-  #}
 }

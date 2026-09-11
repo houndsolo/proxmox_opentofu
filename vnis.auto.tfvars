@@ -16,8 +16,8 @@ vnis = [
     border_leaf_ipv4_rt_exports      = "700:6666"
     border_leaf_ipv4_vpn_import_bool = true
     export_vpn_ipv4                  = true
-# ipv4_rt_imports       = "700:6200 700:6900"   # mirrored from line 36 (commented)
-# ipv4_rt_exports      = "700:6600"             # mirrored from line 37 (commented)
+    # ipv4_rt_imports       = "700:6200 700:6900"   # mirrored from line 36 (commented)
+    # ipv4_rt_exports      = "700:6600"             # mirrored from line 37 (commented)
     evpn_rt_imports = [
       "700:6666",
       "700:6900",
@@ -92,17 +92,17 @@ vnis = [
     }
   },
   {
-vlan_id   = 69
-vni       = 6900
-roles     = ["pve", "external_l2"]
-vrf       = "lylat_lan"
-vrf_table = 1337
-# ancast_mac = "bc:24:11:00:69:00"           # duplicate, same value already active below on line 125
-    ipv4_rt_imports   = "700:6600 700:6200 700:6700"
-    ipv4_rt_exports   = "700:6900"
-# border_leaf_ipv4_vrf_imports = ["lylat_service"]  # duplicate value already defined elsewhere
-# border_leaf_ipv4_rt_imports  = "700:6666 700:6600 700:6200"  # same as anycast value, already active
-# border_leaf_ipv4_rt_exports  = "700:6900"           # same as ipv4_rt_exports above
+    vlan_id   = 69
+    vni       = 6900
+    roles     = ["pve", "external_l2"]
+    vrf       = "lylat_lan"
+    vrf_table = 1337
+    # ancast_mac = "bc:24:11:00:69:00"           # duplicate, same value already active below on line 125
+    ipv4_rt_imports = "700:6600 700:6200 700:6700"
+    ipv4_rt_exports = "700:6900"
+    # border_leaf_ipv4_vrf_imports = ["lylat_service"]  # duplicate value already defined elsewhere
+    # border_leaf_ipv4_rt_imports  = "700:6666 700:6600 700:6200"  # same as anycast value, already active
+    # border_leaf_ipv4_rt_exports  = "700:6900"           # same as ipv4_rt_exports above
     border_leaf_ipv4_vpn_import_bool = true
     export_vpn_ipv4                  = true
     evpn_rt_imports = [
@@ -165,13 +165,13 @@ vrf_table = 1337
   },
 
   {
-    vlan_id         = 62
-    vni             = 6200
-    roles           = ["pve"]
-    vrf             = "lylat_infra"
-    vrf_table       = 700
-    ipv4_rt_imports = "700:6600 700:6900"
-    ipv4_rt_exports = "700:6200"
+    vlan_id                          = 62
+    vni                              = 6200
+    roles                            = ["pve"]
+    vrf                              = "lylat_infra"
+    vrf_table                        = 700
+    ipv4_rt_imports                  = "700:6600 700:6900"
+    ipv4_rt_exports                  = "700:6200"
     border_leaf_ipv4_vpn_import_bool = true
     export_vpn_ipv4                  = true
     evpn_rt_imports = [
