@@ -20,7 +20,7 @@ vms = {
       node_name    = "fichina"
       file_name    = "nextcloudDB-01.yaml"
 
-      hostname = "nextcloud-01"
+      hostname = "nextcloudDB-01"
       username = "mechanic"
 
       packages = [
