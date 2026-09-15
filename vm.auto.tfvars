@@ -1,4 +1,120 @@
 vms = {
+  nextcloudDB-01 = {
+    name        = "nextclouDBd-01"
+    description = "NextcloudDB 01"
+    tags        = ["opentofu"]
+    started     = true
+    template    = false
+    on_boot     = true
+
+    node_name = "eldarad"
+    vm_id     = 6702
+
+    image_key = "debian_13"
+    machine = "q35"
+    bios  = "ovmf"
+
+    cloud_init = {
+      enabled      = true
+      datastore_id = "cephfs"
+      node_name    = "fichina"
+      file_name    = "nextcloud-01.yaml"
+
+      hostname = "nextcloud-01"
+      username = "mechanic"
+
+      packages = [
+        "qemu-guest-agent",
+        "net-tools",
+        "curl",
+        "git",
+      ]
+
+      runcmd = [
+        "systemctl enable --now qemu-guest-agent",
+        "echo 'cloud-init complete' > /tmp/cloud-config.done",
+      ]
+    }
+
+    disk = {
+      datastore_id = "ceph_rbd"
+      interface    = "virtio0"
+      iothread     = true
+      size         = 32
+    }
+
+    initialization = {
+      interface    = "scsi0"
+      datastore_id = "ceph_rbd"
+      upgrade      = false
+
+      dns = {
+        domain  = "lylat.space"
+        servers = ["1.1.1.1"]
+      }
+
+      ip_configs = [
+        {
+          ipv4 = {
+            address = "10.20.2.2/16"
+          }
+        },
+        {
+          ipv4 = {
+            address = "10.2.2.2/16"
+            gateway = "10.2.0.5"
+          }
+        },
+        {
+          ipv4 = {
+            address = "10.27.2.2/16"
+          }
+        }
+      ]
+
+      user_account = {
+        username = "mechanic"
+      }
+    }
+
+    network_devices = [
+      {
+        bridge = "vmbr0"
+        model  = "virtio"
+      },
+      {
+        bridge  = "vmbr4000"
+        vlan_id = 2
+        model   = "virtio"
+      },
+      {
+        bridge  = "vmbr27"
+        model   = "virtio"
+      }
+    ]
+
+    serial_devices = [
+      {
+        device = "socket"
+      }
+    ]
+
+    cpu = {
+      cores = 6
+      type  = "x86-64-v2-AES"
+    }
+
+    memory = {
+      dedicated = 10240
+    }
+
+    operating_system_type = "l26"
+
+    vga = {
+      memory = 16
+      type   = "serial0"
+    }
+  }
   nextcloud-01 = {
     name        = "nextcloud-01"
     description = "Nextcloud 26.04 LTS server"
