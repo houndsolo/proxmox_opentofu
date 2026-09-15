@@ -18,7 +18,7 @@ vms = {
       enabled      = true
       datastore_id = "cephfs"
       node_name    = "fichina"
-      file_name    = "nextcloud-01.yaml"
+      file_name    = "nextcloudDB-01.yaml"
 
       hostname = "nextcloud-01"
       username = "mechanic"
